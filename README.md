@@ -13,7 +13,7 @@ Flowserve makes it easy to:
 - 🔄 Chain together modular pipeline steps (Load → Adapt → Model → Serve)
 - 📊 Automatically infer the task type (classification or regression)
 - 🧠 Auto-select or manually pass ML models (e.g., sklearn, XGBoost)
-- 🪄 Serve your model as a REST API (coming soon)
+- 🪄 Serve your model as a REST API
 - 📈 Track experiments with Weights & Biases (optional)
 
 ---
@@ -49,13 +49,16 @@ Load data from:
 
 * Infers whether it's a classification or regression task
 * Supports automatic or user-supplied models
-* Logs performance metrics (accuracy or RMSE)
-* Optional integration with `wandb` for experiment tracking
+* Logs performance metrics (accuracy, F1, R2, RMSE)
+* Choose the optimization metric via `optimizer`
+* Optional integration with `wandb` for experiment tracking and artifact storage
 
-### 🔜 `Serve` *(Coming Soon)*
+### ✅ `Serve`
 
 * Expose trained model as a REST API with FastAPI
-* Serve predictions via `/predict` endpoint
+* Health check at `/health`
+* Serve predictions via configurable endpoint (default `/model/predict`)
+* View best metric via `/metrics`
 
 ---
 
